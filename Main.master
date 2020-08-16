@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--<link href="~/StyleSheet/navigationbar.css" rel="stylesheet" type="text/css" />-->
+    <link href="navigationbar.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style type="text/css">
+        .style1
+        {
+            width: 174px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+         <table width="100%" border="0">
+                    <tr>
+                        <td bgcolor="#FFFFFF" align="center" class="style1">
+                            <img src="Images/Logo/seclogo.png" alt=""/>
+                        </td>
+                        <td bgcolor="#FFFFFF" align="center">
+                            <img src="Images/Logo/mainlogo.jpeg" alt=""/>
+                        </td>
+                    </tr>
+                </table>
+            <div class="nav">
+                <ul>
+			        <li><a href="Home.aspx">Home</a></li>
+			        <li><a href="Products.aspx">Products</a></li>
+			        <li><a href="Login.aspx">My Bookshelf</a></li>
+			        <li><a href="ContactUs.aspx">Contact Us</a></li>
+			        <li><a href="AboutUs.aspx">About Us</a></li>
+			        <div id="loginPageStatus" runat="server"><li><a href="Register.aspx">New User</a></li></div>
+		        </ul>
+	        </div>
+            <div>
+                <table width="100%" cellpadding="0px" cellspacing="0px">
+                    <tr style="color: White; background-color: White">
+                        <td>
+                            <ul style="height: auto">
+                                <li style="height: auto">
+                                    <a href="CartDetails.aspx" style="font-family: Algerian;color:black;text-shadow: 3px 2px gray;">
+                                    <asp:Label ID="Label2" runat="server" Text="CART :"></asp:Label>
+                              &nbsp;<asp:Label ID="lblCart" runat="server" Visible="False"></asp:Label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </td>
+                        <td width="55%" align="right">
+                           <asp:LinkButton ID="LBtnLogout" runat="server" ForeColor="Black" 
+                                NavigateUrl="Login.aspx" Font-Bold="True" Font-Names="Arial" Font-Size="Medium" 
+                                onclick="LBtnLogout_Click" BorderColor="White" BorderStyle="Outset" 
+                                   Width="200px" CausesValidation="False">Logout</asp:LinkButton>  
+                        </td>
+                        <td align="right">
+                                <asp:Label ID="Label1" runat="server" Visible="False" Font-Bold="False" 
+                                    Font-Size="X-Large" ForeColor="Red" Text="Greeting"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            
+                        </asp:ContentPlaceHolder>
+
+             <table width="100%" cellpadding="0px" cellspacing="0px">
+                <br /><br /><br />
+                <tr style="background-color: Black; color: White">
+                    <td colspan="2" align="center" style="font-family: Arial">Copyright &copy; 2018 TheBookShelf.in
+                    </td>
+                </tr>
+             </table>       
+    </div>
+    </form>
+</body>
+</html>
